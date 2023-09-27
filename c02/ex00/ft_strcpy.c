@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 10:25:54 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/25 21:19:22 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/25 21:32:22 by alvartor          #+#    #+#             */
+/*   Updated: 2023/09/26 09:54:03 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+
+char	*ft_strcpy(char *dest, char *src)
 {
 	int		i;
-	int		z;
-	int		aux;
 
 	i = 0;
-	z = size - 1;
-	while (i < (size / 2))
+	while (src[i] != '\0')
 	{
-		aux = tab[i];
-		tab[i] = tab[z];
-		tab[z] = aux;
+		dest[i] = src[i];
 		i++;
-		z--;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
+
+// int main(void)
+// {
+// 	char my_str2[] = {'H', 'o', 'l' , 'a'};
+// 	char my_dst2[] = {' ', ' ', ' '};
+// 	printf("Mi funcion ft_strcpy: %s\n", ft_strcpy(my_dst2, my_str2));
+// 	return (0);
+// }

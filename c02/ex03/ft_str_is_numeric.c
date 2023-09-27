@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 10:25:54 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/25 21:19:22 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/26 13:29:09 by alvartor          #+#    #+#             */
+/*   Updated: 2023/09/26 13:36:50 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+#include <stdio.h>
+
+int	ft_str_is_numeric(char *str)
 {
-	int		i;
-	int		z;
-	int		aux;
+	int	i;
+	int	num;
 
 	i = 0;
-	z = size - 1;
-	while (i < (size / 2))
+	while (str[i])
 	{
-		aux = tab[i];
-		tab[i] = tab[z];
-		tab[z] = aux;
+		if (!(str[i] >= '0' && str[i] <= '9'))
+		{
+			return (0);
+		}
 		i++;
-		z--;
 	}
+	return (1);
 }
+
+/*
+int main(void)
+{
+	printf("%d\n", ft_str_is_numeric("34"));
+	return (0);
+}
+*/

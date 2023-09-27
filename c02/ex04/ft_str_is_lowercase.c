@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 10:25:54 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/25 21:19:22 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/26 13:37:54 by alvartor          #+#    #+#             */
+/*   Updated: 2023/09/26 13:39:19 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_str_is_lowercase(char *str)
 {
-	int		i;
-	int		z;
-	int		aux;
+	int	i;
+	int	low;
 
 	i = 0;
-	z = size - 1;
-	while (i < (size / 2))
+	while (str[i])
 	{
-		aux = tab[i];
-		tab[i] = tab[z];
-		tab[z] = aux;
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
+		{
+			return (0);
+		}
 		i++;
-		z--;
 	}
+	return (1);
 }

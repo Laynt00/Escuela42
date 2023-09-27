@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:42:39 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/22 12:35:02 by alvartor         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:58:48 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putc(char c)
 	write(1, &c, 1);
 }
 
-char	ft_helper(char c, unsigned n)
+char	ft_helper(char c, unsigned	int n)
 {
 	char	result;
 
