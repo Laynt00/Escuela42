@@ -6,14 +6,13 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:37:54 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/26 13:39:19 by alvartor         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:13:18 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_lowercase(char *str)
 {
 	int	i;
-	int	low;
 
 	i = 0;
 	while (str[i])

@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:30:55 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/26 13:04:58 by alvartor         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:13:36 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_str_is_alpha(char *str)
 {
 	int	i;
-	int	alp;
 
 	i = 0;
 	while (str[i])

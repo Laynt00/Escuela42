@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 21:32:22 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/27 23:05:39 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/27 22:15:09 by alvartor          #+#    #+#             */
+/*   Updated: 2023/09/27 22:32:09 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <string.h>
-//#include <stdio.h>
-//#include <unistd.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
-	int		i;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+		str[i] = str[i] - 32 ;
+		}
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (str);
 }
 
-// int main(void)
-// {
-// 	char my_str2[] = {'H', 'o', 'l' , 'a'};
-// 	char my_dst2[] = {' ', ' ', ' '};
-// 	printf("Mi funcion ft_strcpy: %s\n", ft_strcpy(my_dst2, my_str2));
-// 	return (0);
-// }
+/*
+int main(void)
+{
+ char lowercase[] = "abcdefghijklmnopqrstuvwxyz123ASDZasdasd$·%&/";
+	char *p_lwr;
+	p_lwr = lowercase;
+	
+
+	printf("%s\n", ft_strupcase(p_lwr));
+
+}
+*/

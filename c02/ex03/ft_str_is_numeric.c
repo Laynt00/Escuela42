@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:29:09 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/26 13:36:50 by alvartor         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:13:30 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_str_is_numeric(char *str)
 {
 	int	i;
-	int	num;
 
 	i = 0;
 	while (str[i])
