@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   rush.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/30 13:30:46 by jjezzard          #+#    #+#             */
+/*   Updated: 2023/09/30 13:53:39 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
-{
-	int	i;
+#include <unistd.h>
+#include <stdio.h>
 
-	i = 0;
-	while (str[i])
+int	main(void)
+{
+	int	r;
+	int	c;
+	int	mat[4][4] = {1, 2, 3, 4, 2, 3, 4, 1, 3, 4, 1, 2, 4, 1, 2, 3};
+
+	r = 0;
+	while (r < 4)
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+    c = 0;
+		while (c < 4)
 		{
-			return (0);
+			printf("%d ", mat[r][c]);
+			c++;
 		}
-		i++;
+		printf("\n");
+		r++;
 	}
-	return (1);
+	return (0);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*    ft_str_is_printable.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/27 22:06:55 by alvartor          #+#    #+#             */
+/*   Updated: 2023/10/04 13:46:47 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+//#include <stdio.h>
+
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		if (!(str[i] >= 32 && str[i] <= 126))
 		{
 			return (0);
 		}
@@ -25,3 +27,11 @@ int	ft_str_is_uppercase(char *str)
 	}
 	return (1);
 }
+
+/*
+int main(void)
+{
+	printf("%d\n", ft_str_is_printable("34"));
+	return (0);
+}
+*/

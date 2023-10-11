@@ -1,27 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/10/04 16:02:14 by alvartor          #+#    #+#             */
+/*   Updated: 2023/10/04 16:40:35 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
+	if (*to_find == '\0')
+		return (str);
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		j = 0;
+		while (to_find[j] == str[i + j])
 		{
-			return (0);
+			if (to_find[j + 1] == '\0')
+			{
+				return (str + i);
+			}
+			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
+
+/* #include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char *largestring = "Foo Bar Baz";
+    char *smallstring = "BA";
+    printf("%s", ft_strstr(largestring, smallstring));
+    return (0);
+} */

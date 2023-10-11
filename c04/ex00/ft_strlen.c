@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/10/05 17:56:59 by alvartor          #+#    #+#             */
+/*   Updated: 2023/10/05 19:26:19 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
-		{
-			return (0);
-		}
 		i++;
 	}
-	return (1);
+	return (i);
 }
+ #include <stdio.h>
+int main(void)
+{
+	printf("%d",ft_strlen(""));
+	return (0);
+} 

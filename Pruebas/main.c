@@ -3,9 +3,13 @@
 
 int main(void)
 {
-    int num = '1';
-    printf("%i", num);
 
+    int num = 23;
+    int *pNum = &num;
+    printf("adress of num: %p\n", &num);
+    printf("value of pNum: %p\n", pNum);
+    printf("value of num: %d\n", num);
+    printf("value at stored adress: %d\n", *pNum);
     return 0;
 
 }

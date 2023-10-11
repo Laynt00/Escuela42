@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*    ft_strcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/10/04 15:19:25 by alvartor          #+#    #+#             */
+/*   Updated: 2023/10/04 15:36:00 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
-		{
-			return (0);
-		}
+	while (dest[i])
 		i++;
-	}
-	return (1);
+	while (*src)
+		dest[i++] = *src++;
+	dest[i] = '\0';
+	return (dest);
 }
+
+/* #include <stdio.h>
+int main(void)
+{
+	char str1[100] = "Alvaro ", str2[] = "Torres";
+	printf("%s", ft_strcat(str1, str2));
+	return (0);
+}  */

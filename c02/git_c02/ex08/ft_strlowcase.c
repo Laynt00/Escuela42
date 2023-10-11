@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_str_is_printable.c                             :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 22:06:55 by alvartor          #+#    #+#             */
-/*   Updated: 2023/09/27 22:13:22 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/27 22:33:42 by alvartor          #+#    #+#             */
+/*   Updated: 2023/09/27 22:37:36 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+char	*ft_strlowcase(char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= 32 && str[i] <= 126))
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			return (0);
+		str[i] = str[i] + 32 ;
 		}
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
 /*
 int main(void)
 {
-	printf("%d\n", ft_str_is_printable("34"));
-	return (0);
+ char uppercase[] = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ123ASDZasdasd$·%&/";
+	char *p_upp;
+	p_upp = uppercase;
+	
+
+	printf("%s\n", ft_strlowcase(p_upp));
+
 }
 */

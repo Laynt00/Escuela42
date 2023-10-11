@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/09/28 13:57:47 by alvartor          #+#    #+#             */
+/*   Updated: 2023/10/09 17:58:35 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
+#include <string.h>
+#include <stdio.h>
+
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (str[i])
+	while (s1[i])
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		if (s1[i] != s2[i])
 		{
-			return (0);
+			return (s1[i] - s2[i]);
 		}
 		i++;
 	}
-	return (1);
+	if (s2[i] == '\0')
+		return (0);
+	else
+		return (-s2[i]);
 }
+
+/* int main(void)
+{
+	char *str1;
+	str1 = "ho";
+	char *str2;
+	str2 = "hoss";
+	printf("%i", strcmp(str1, str2));
+	return (0);
+} */

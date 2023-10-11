@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 13:40:05 by alvartor          #+#    #+#             */
-/*   Updated: 2023/10/04 13:44:11 by alvartor         ###   ########.fr       */
+/*   Created: 2023/10/04 14:24:38 by alvartor          #+#    #+#             */
+/*   Updated: 2023/10/04 15:18:18 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str)
-{
-	int	i;
+#include <string.h>
+#include <stdio.h> 
 
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	unsigned int	i;
+
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
-		{
-			return (0);
-		}
+	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n)
 		i++;
-	}
-	return (1);
+	if (i == n)
+		i--;
+	return (s1[i] - s2[i]);
 }
+
+/* int main(void)
+{
+	char *str1;
+	str1 = "hol";
+	char *str2;
+	str2 = "hola";
+	printf("%i", strncmp(str1, str2, 5));
+	return (0);
+} */
