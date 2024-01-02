@@ -1,6 +1,9 @@
 {
     "files.autoSave": "afterDelay",
     "files.associations": {
-        "strings.h": "c"
+        "strings.h": "c",
+        "libft.h": "c",
+        "__functional_03": "c",
+        "functional": "c"
     }
 }
