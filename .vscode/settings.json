@@ -4,7 +4,8 @@
         "strings.h": "c",
         "libft.h": "c",
         "__functional_03": "c",
-        "functional": "c"
+        "functional": "c",
+        "string.h": "c"
     },
     "editor.detectIndentation": false,
     "editor.indentSize": "tabSize"

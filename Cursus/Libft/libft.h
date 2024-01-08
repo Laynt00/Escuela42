@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:30:43 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/08 10:40:58 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:27:48 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int			ft_tolower(int c);
 int			ft_toupper(int c);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
