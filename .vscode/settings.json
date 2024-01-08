@@ -5,5 +5,7 @@
         "libft.h": "c",
         "__functional_03": "c",
         "functional": "c"
-    }
+    },
+    "editor.detectIndentation": false,
+    "editor.indentSize": "tabSize"
 }

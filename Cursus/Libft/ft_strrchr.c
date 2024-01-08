@@ -6,16 +6,16 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 18:47:33 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/02 18:52:52 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/08 10:37:17 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int		i;
+	int		i;
 	int		pos_c;
 
 	pos_c = -1;
