@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 18:00:24 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/15 22:43:31 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/10 10:52:23 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/10 12:06:30 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strdup(const char *src)
 {
-	unsigned int		i;
+	int		i;
+	int		len;
+	char	*ptr;
 
 	i = 0;
-	while (s[i] != (unsigned char) c)
+	len = ft_strlen(src);
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (ptr == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		if (s[i] == '\0')
-			return (NULL);
+		ptr[i] = src[i];
 		i++;
 	}
-    if (c == '\0')
-        return ((char *)s + i);
-	return ((char *)s + i);
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 /* int main()
 {
-   char s[11] = "Hola amigos";
-   char c = 'a';
-
-   printf( "s=%s\t", s );
-   printf( "c=%c\n", c );
-   printf( "strchr=%s\n", ft_strchr(((void *)0), '\0') );
-
-   return 0;
+	char arr[] = "pepe";
+	char *p;
+	printf("The string in arr is: %s\n", arr);
+	p = ft_strdup(arr);
+	printf("The duplicated string is: %s\n", p);
+	return (0);
 } */

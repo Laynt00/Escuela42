@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:02:41 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/08 10:34:08 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:33:11 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (d > s)
 	{
-		while (len > 0)
-		{
+		while (len-- > 0)
 			d[len] = s[len];
-			len--;
-		}
 	}
 	else
 	{
@@ -40,3 +37,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+/* int main () {
+   char dest[] = "oldstring";
+   const char src[]  = "newstring";
+
+   printf("Before memmove dest = %s, src = %s\n", dest, src);
+   ft_memmove(((void *)0), ((void *)0), 5);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
+
+   return(0);
+} */

@@ -6,14 +6,15 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:08:06 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/08 10:23:04 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:37:32 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned const char	*s;
 	unsigned char		*d;
@@ -33,3 +34,17 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	}
 	return (dst);
 }
+
+/* struct {
+  char name[40];
+  int age;
+} person, person_copy;
+
+int main()
+{
+	char myname[] = "Pierre de Fermat";
+
+  memcpy ( person.name, myname, strlen(myname)+1 );
+  printf ("person: %s,\n", person.name);
+	return 0;
+} */
