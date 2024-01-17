@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 18:00:24 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/15 22:43:31 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:12:30 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_strchr(const char *s, int c)
 			return (NULL);
 		i++;
 	}
-    if (c == '\0')
-        return ((char *)s + i);
+	if (c == '\0')
+		return ((char *)s + i);
 	return ((char *)s + i);
 }
 

@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:26:37 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/08 10:34:40 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:04:22 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	unsigned int	i;
 	int				counter;
 
-	if (!src)
-		return (0);
 	counter = (unsigned int)ft_strlen(src);
 	if (!dstsize)
 		return (counter);
