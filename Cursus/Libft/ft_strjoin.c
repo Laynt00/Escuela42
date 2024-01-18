@@ -6,30 +6,36 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:24:55 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/18 17:41:24 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/18 23:06:50 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char	*str;
-	char	*str2;
-	
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	char			*str;
+	unsigned char	s1_len;
+	unsigned char	s2_len;
+
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (!str)
 		return (NULL);
-	str2 = (char *)s2;
-	ft_strlcpy(str, s1, sizeof(str));
-	ft_strlcat(str, s2, sizeof(str2));
+	ft_strlcpy(str, s1, s1_len + 1);
+	ft_strlcpy((str + s1_len), s2, s2_len + 1);
 	return (str);
-} 
+}
 
-int main()
+/* int main()
 {
-	char *str = ft_strjoin("Go Go", "Power Rangers!");
-	printf("%s\n", str);
+	char *str = "GO GOGO";
+	char *str2 = "Power Rangerssasdasdqweqweqwe123123123123!";
+	char *str3 = ft_strjoin(str, str2);
+	printf("%s\n", str3);
 
 	return 0;
-}
+} */
