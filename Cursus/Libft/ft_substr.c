@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 22:51:33 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/18 16:37:37 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:29:47 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,35 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
+	char	*sub;
+	size_t	new_len;
 
-	k = len;
-	i = start;
-	j = 0;
 	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
+		return (NULL);
+	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
-	if (len > ft_strlen(s))
-		k = ft_strlen(s);
-	str = malloc((sizeof(char)) * (k + 1));
-	if (!str)
-		return (0);
-	while (i < ft_strlen(s) && j < len)
+	else
 	{
-		str[j] = s[i + j];
-		j++;
+		new_len = ft_strlen(s + start);
+		if (!(new_len < len))
+			new_len = len;
+		sub = (char *)malloc(sizeof(char) * (new_len + 1));
+		if (!sub)
+			return (NULL);
+		sub[new_len] = 0;
+		while (new_len-- > 0)
+			sub[new_len] = s[start + new_len];
 	}
-	str[j] = '\0';
-	return (str);
+	return (sub);
 }
 
-/* // Implement `substr()` functi on in C
+/* // Implement `substr()` function in C
 int main()
 {
-	char src[] = "substrfunctionImplementation";
+	char src[] = "abcd";
 
-	int m = 7;
-	int n = 8;
+	int m = 2;
+	int n = 2393; 
 
 	char* dest = ft_substr(src, m, n);
 
