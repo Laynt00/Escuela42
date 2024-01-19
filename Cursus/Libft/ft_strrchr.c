@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 18:47:33 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/08 10:37:17 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:46:15 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,16 @@ char	*ft_strrchr(const char *s, int c)
 			pos_c = i;
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s + i);
 	if (pos_c == -1)
 		return (NULL);
 	return ((char *)s + pos_c);
 }
+
+/* int main ()
+{
+	printf("Strrchr Original: %s\n", strrchr("teste", '\0'));
+	printf("Strrchr : %s\n", ft_strrchr("teste", '\0'));
+	return 0;
+} */
