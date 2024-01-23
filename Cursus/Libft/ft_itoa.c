@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:58:15 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/22 13:49:06 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:35:40 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,35 +25,43 @@ void reverse(char str[], int length)
         start++;
     }
 }
-// Counts the number of digits in the number
-int	num_len(int n)
+// digits the number of digits in number
+int	digit_count(int n)
 {
-	int		count;
+	int		digit;
 
-	count = 0;
-	while (n != 0)
+	digit = 0;
+	while (n)
 	{
 		n /= 10;
-		++count;
+		digit++;
 	}
-	return (count);
+	return (digit);
 }
 
 char *ft_itoa(int n)
 {
-	int		i;
+	int		d_count;
     bool 	isNegative;
-	int		rem;
 	char	*str;
 	
-	i = 0;
 	isNegative = false;
-	str = malloc(sizeof(char) * (num_len(n) + 1));
-	if (n < 0 )
+	d_count = digit_count(n) + isNegative;
+	printf ("Digitos en el int: %d\n",digit_count(d_count));
+	str = malloc(sizeof(char) * (digit_count(n) + 1));
+	if(!str)
+		return (NULL);
+	/* if (n < 0 )
 	{
         isNegative = true;
         n = -n;
     }
+	if (n == 0)
+	{
+		str[i] = '0';
+		str[i + 1] = '\0';
+		return (str);
+	}
 	// Process individual digits
     while (n != 0)
 	{
@@ -61,26 +69,21 @@ char *ft_itoa(int n)
         str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
         n = n / 10; // Divides by base 10
     }
-	if (n == 0)
-	{
-		str[i] = '0';
-		return (str);
-	}
+	
 	if (isNegative)
         str[i++] = '-';
-	str[i] = '\0';
     reverse(str, i);
-	return (str);
+	str[i] = '\0'; */
+	return (0);
 }
-
 
 #include <stdio.h>
 #include <stdlib.h>
 
 int main ()
 {
-  int i = 0;
-  printf ("Digitos en el int: %d\n",num_len(i));
+  int i = -9;
+  
   printf ("Numero en string: %s\n",ft_itoa(i));
   return 0;
 }

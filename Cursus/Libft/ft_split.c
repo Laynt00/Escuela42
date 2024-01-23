@@ -6,27 +6,12 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:53:16 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/22 12:06:11 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:14:04 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-/*
- * DESCRIPTION
- * Allocates (with malloc(3)) and returns an array of strings obtained 
- * by splitting ’s’ using the character ’c’ as a delimiter. 
- * The array must end with a NULL pointer.
- *
- * RETURN
- * The array of new strings resulting from the split.
- * NULL if the allocation fails.
- *
- * INPUT 
- * s: The string to be split.
-   c: The delimiter character.
-*/
 int	safe_malloc(char **token_v, int position, size_t buffer)
 {
 	int		i;
@@ -43,7 +28,6 @@ int	safe_malloc(char **token_v, int position, size_t buffer)
 	return (0);
 }
 
-// return 0 if all mallocs went fine, otherwise 1
 int	fill(char **token_v, char const *s, char delimeter)
 {
 	size_t	len;
@@ -62,9 +46,9 @@ int	fill(char **token_v, char const *s, char delimeter)
 		}
 		if (len)
 		{
-			 if (safe_malloc(token_v, i, len + 1))
-				   return (1);
-		  ft_strlcpy(token_v[i], s - len, len + 1);
+			if (safe_malloc(token_v, i, len + 1))
+				return (1);
+			ft_strlcpy(token_v[i], s - len, len + 1);
 		}
 		++i;
 	}
@@ -95,16 +79,6 @@ size_t	count_tokens(char const *s, char delimeter)
 	return (tokens);
 }
 
-/*
- * INPUT
- *
- * "___Hello_there,_dude!!"
- *
- *  v--->[0]------->"Hello"
- *   |-->[1]------->"there,"
- *   |-->[2]------->"dude!!"
- *   |-->[NULL]
-**/
 char	**ft_split(char const *s, char c)
 {
 	size_t	tokens;
