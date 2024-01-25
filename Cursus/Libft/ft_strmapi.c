@@ -6,36 +6,30 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 09:14:35 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/23 09:40:06 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/25 11:40:53 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
-	unsigned long i;
-	unsigned long l;
-	char          *str;
+	int		i;
+	char	*str;
+	int		len;
 
-	l = ft_strlen(s);
-	str = (char*)malloc(sizeof(char) * (l + 1));
+	i = 0;
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < l)
+	while (i < len)
 	{
-		str[i] = (*f)(i, str[i]);
-		++i;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	str[i] = 0;
+	str[len] = '\0';
 	return (str);
-} */
-
-/* int int main(int argc, char const *argv[])
-{
-	char *str = "Hola holita vecinito"
-	printf("La string antes: %s\n", str);
-	printf("La string despues: %s\n", ft_strmapi(str,));
-	return 0;
-} */
+}

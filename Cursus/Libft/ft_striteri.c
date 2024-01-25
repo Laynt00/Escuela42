@@ -6,11 +6,20 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/23 09:40:10 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/25 11:41:11 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-
-} */
+    int	i;
+    
+    i = 0;
+    if (!s || !f)
+    	return ;
+    while (s[i])
+    {
+    	f(i, &s[i]);
+    	i++;
+    }
+}
