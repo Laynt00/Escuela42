@@ -1,0 +1,12 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "strings.h": "c",
+        "libft.h": "c",
+        "__functional_03": "c",
+        "functional": "c",
+        "string.h": "c"
+    },
+    "editor.detectIndentation": false,
+    "editor.indentSize": "tabSize"
+}
