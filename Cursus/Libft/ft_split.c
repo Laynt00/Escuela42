@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:53:16 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/23 11:14:04 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:16:15 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 	tokens = 0;
 	tokens = count_tokens(s, c);
 	token_v = malloc((tokens + 1) * sizeof(char *));
-	if (NULL == token_v)
+	if (token_v == NULL)
 		return (NULL);
 	token_v[tokens] = NULL;
 	if (fill(token_v, s, c))

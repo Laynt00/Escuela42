@@ -6,7 +6,13 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:10:36 by alvartor          #+#    #+#             */
-/*   Updated: 2023/12/13 12:31:44 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:03:20 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libft.h"
+
+int ft_printf(char const *, ...)
+{
+    
+}
