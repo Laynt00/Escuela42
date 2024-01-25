@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:02:41 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 11:09:10 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:11:53 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 }
 
 /* int main () {
-   char *a = "Hola";
-   char *b = "Vecinito";
+   char b[0xF0];
 
-   printf("Before memmove src = %s\n", a);
-   ft_memmove(b, a, 2);
-   printf("After memmovesrc = %s\n", a);
+   printf("Before memmove src = %s\n", b);
+   ft_memmove((void *)0, b, 5);
+   printf("After memmovesrc = %s\n", b);
 
    return(0);
 } */

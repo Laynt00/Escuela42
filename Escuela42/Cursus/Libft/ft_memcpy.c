@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:08:06 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 10:43:56 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:37:32 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char		*s;
+	unsigned const char	*s;
 	unsigned char		*d;
 	size_t				i;
 
@@ -27,7 +27,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	{
 		return (dst);
 	}
-	while (i < n)
+	while (n > i)
 	{
 		d[i] = s[i];
 		i++;
