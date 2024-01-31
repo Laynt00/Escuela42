@@ -1,15 +1,13 @@
 LIB = ar rcs
 INCLUDE = includes
 LIBFT		= libft
-SRC_DIR		= src/
-OBJ_DIR		= obj/
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-NAME = libft.a 
-SRC = ft_printf.c   	  
+NAME = libftprintf.a 
+SRC = ft_printf.c    	  
 OBJ = $(SRC:.c=.o)
 
 # Colors
@@ -24,10 +22,7 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-#Sources
 
-SRC 		= 	$(addprefix $(SRC_DIR)))
-OBJ 		= 	$(addprefix $(OBJ_DIR)))
 
 ###
 
