@@ -28,6 +28,10 @@ int				ft_printf(const char *format, ...);
 *****************************   PRINT FUNCTION   *******************************
 */
 
+int	ft_prints1(char const *format, int ch_p, va_list args);
+
+void ft_print_ch(char const *format, int ch_p, va_list args);
+
 
 /*
 *****************************   UTILS FUNCTION   *******************************

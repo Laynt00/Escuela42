@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:10:36 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/31 11:11:11 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/01/31 11:42:46 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,39 +22,7 @@ int ft_printf(char const *format, ...)
 	if(format == NULL)
 		return (-1);
 	va_start(args, format);
-	while(*format)
-	{
-		if(*format != '%')
-		{
-			write(1, format, 1); //Write the ch to the standard output
-			ch_print++;
-		}
-		else					 //If format is the % sign
-		{
-			format++;			 //Skip '%' - Check next ch
-			if(*format == '\0')
-				break;
-			if(*format != '%') // This solves '%%'
-			{
-				write(1, format, 1);  
-				ch_print++;
-			}
-			else if(*format == 'c')
-			{
-				char c = va_arg(args, int); //Use va_arg(list,char) for ch
-				write(1, &c, 1);
-				ch_print++;
-			}
-			else if (*format == 's')
-			{
-				char *str = va_arg(args, char *);
-				write(1, str, ft_strlen(str));
-				ch_print += ft_strlen(str);
-			}
-		}
-		format++;
-		
-	}
+	ch_print = ft_prints1(format, ch_print, args);
 	va_end(args);  //Ends the list of arguments
 	return (ch_print);
 }
