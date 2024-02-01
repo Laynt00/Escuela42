@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:24:58 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/31 11:48:00 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/01 20:45:11 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ void ft_print_ch(char const *format, int ch_p, va_list args)
 				write(1, str, ft_strlen(str));
 				ch_p += ft_strlen(str);
 			}
+            else if (*format == 'p')
+            {
+                
+            }
 }
 
 int	ft_prints1(char const *format, int ch_p, va_list args)
