@@ -6,6 +6,8 @@
 # include "./libft/libft.h"
 # include <stdio.h>
 
+# define TYPE "csdiupxX%"
+
 typedef struct	s_info
 {
 	int			minus;
@@ -23,6 +25,7 @@ typedef struct	s_info
 */
 
 int				ft_printf(const char *format, ...);
+void			check_info(va_list ap, char *format, t_info *info, int i);
 
 /*
 *****************************   PRINT FUNCTION   *******************************
@@ -36,5 +39,7 @@ void ft_print_ch(char const *format, int ch_p, va_list args);
 /*
 *****************************   UTILS FUNCTION   *******************************
 */
+
+void		init_info(t_info *info);
 
 #endif
