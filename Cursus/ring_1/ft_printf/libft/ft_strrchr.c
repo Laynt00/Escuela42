@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/02 18:47:33 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/22 10:50:46 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	int	i;
+#include <stdio.h>
+#include "libft.h"
 
+char	*ft_strrchr(const char *s, int c)
+{
+	int		i;
+	int		pos_c;
+
+	pos_c = -1;
 	i = 0;
-	if (!s || !f)
-		return ;
 	while (s[i])
 	{
-		f(i, &s[i]);
+		if (s[i] == (unsigned char)c)
+			pos_c = i;
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s + i);
+	if (pos_c == -1)
+		return (NULL);
+	return ((char *)s + pos_c);
 }
 
-/* void uppercase(unsigned int index, char *ch)
+/* int main ()
 {
-    *ch = toupper(*ch);
-}
-
-int main()
-{
-	char str[] = "hello";
-    ft_striteri(str, uppercase);
-    return (0);
+	printf("Strrchr Original: %s\n", strrchr("teste", '\0'));
+	printf("Strrchr : %s\n", ft_strrchr("teste", '\0'));
+	return 0;
 } */

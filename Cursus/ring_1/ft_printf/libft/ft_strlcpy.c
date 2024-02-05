@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/02 17:26:37 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/17 19:04:22 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	int	i;
+#include <stdio.h>
+#include "libft.h"
 
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	unsigned int	i;
+	int				counter;
+
+	counter = (unsigned int)ft_strlen(src);
+	if (!dstsize)
+		return (counter);
 	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
+	while (src[i] && i < (dstsize - 1))
 	{
-		f(i, &s[i]);
+		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
+	return (counter);
 }
-
-/* void uppercase(unsigned int index, char *ch)
-{
-    *ch = toupper(*ch);
-}
-
-int main()
-{
-	char str[] = "hello";
-    ft_striteri(str, uppercase);
-    return (0);
-} */

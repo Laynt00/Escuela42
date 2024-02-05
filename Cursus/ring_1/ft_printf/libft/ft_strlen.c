@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by alvartor         ###   ########.fr       */
+/*   Created: 2023/12/18 12:12:45 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/08 10:34:56 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+#include <stdio.h>
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-	{
-		f(i, &s[i]);
+	while (s[i] != '\0')
 		i++;
-	}
+	return (i);
 }
-
-/* void uppercase(unsigned int index, char *ch)
-{
-    *ch = toupper(*ch);
-}
-
-int main()
-{
-	char str[] = "hello";
-    ft_striteri(str, uppercase);
-    return (0);
-} */

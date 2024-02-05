@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by alvartor         ###   ########.fr       */
+/*   Created: 2023/12/18 12:08:10 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/08 10:22:07 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
-
-/* void uppercase(unsigned int index, char *ch)
-{
-    *ch = toupper(*ch);
-}
-
-int main()
-{
-	char str[] = "hello";
-    ft_striteri(str, uppercase);
-    return (0);
-} */

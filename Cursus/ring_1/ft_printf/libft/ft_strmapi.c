@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/23 09:14:35 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/25 09:56:53 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+#include "libft.h"
+
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	int		i;
+	char	*str;
+	int		len;
 
 	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	while (i < len)
 	{
-		f(i, &s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
+	str[len] = '\0';
+	return (str);
 }
 
-/* void uppercase(unsigned int index, char *ch)
+/* char f(unsigned int i, char c)
 {
-    *ch = toupper(*ch);
+	char str;
+	str = c + 1;
+	return (str);
 }
 
 int main()
 {
-	char str[] = "hello";
-    ft_striteri(str, uppercase);
+	char str1[] = "abc";
+	char* str2;
+	str2 = ft_strmapi(str1, *f);
+	printf("%s\n", str2);
     return (0);
 } */

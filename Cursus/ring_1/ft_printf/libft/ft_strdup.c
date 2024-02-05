@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:32:59 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/10 10:52:23 by alvartor          #+#    #+#             */
+/*   Updated: 2024/01/10 12:06:30 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+#include "libft.h"
+
+char	*ft_strdup(const char *src)
 {
-	int	i;
+	int		i;
+	int		len;
+	char	*ptr;
 
 	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
+	len = ft_strlen(src);
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (ptr == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		f(i, &s[i]);
+		ptr[i] = src[i];
 		i++;
 	}
+	ptr[i] = '\0';
+	return (ptr);
 }
 
-/* void uppercase(unsigned int index, char *ch)
+/* int main()
 {
-    *ch = toupper(*ch);
-}
-
-int main()
-{
-	char str[] = "hello";
-    ft_striteri(str, uppercase);
-    return (0);
+	char arr[] = "pepe";
+	char *p;
+	printf("The string in arr is: %s\n", arr);
+	p = ft_strdup(arr);
+	printf("The duplicated string is: %s\n", p);
+	return (0);
 } */
