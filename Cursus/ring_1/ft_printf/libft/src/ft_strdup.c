@@ -6,11 +6,11 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:52:23 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/10 12:06:30 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:11:59 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strdup(const char *src)
 {

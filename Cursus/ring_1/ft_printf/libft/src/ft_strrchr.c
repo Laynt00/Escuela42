@@ -6,12 +6,12 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 18:47:33 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/22 10:50:46 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:13:03 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

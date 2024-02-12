@@ -6,11 +6,11 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 09:06:54 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/18 17:20:42 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:09:48 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:53:16 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/23 11:14:04 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:11:52 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	safe_malloc(char **token_v, int position, size_t buffer)
 {

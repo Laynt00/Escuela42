@@ -6,12 +6,12 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:26:37 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/17 19:04:22 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:12:17 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

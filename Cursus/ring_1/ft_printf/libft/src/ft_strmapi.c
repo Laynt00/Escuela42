@@ -6,11 +6,11 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 09:14:35 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/23 09:40:06 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:12:44 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 /* char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

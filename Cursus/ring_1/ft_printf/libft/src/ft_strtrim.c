@@ -6,11 +6,11 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:57:15 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/19 18:58:03 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:13:06 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_getstart(const char *s1, const char *set)
 {
