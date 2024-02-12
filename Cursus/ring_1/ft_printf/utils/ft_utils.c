@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:45:41 by laynt             #+#    #+#             */
-/*   Updated: 2024/02/09 01:03:55 by laynt            ###   ########.fr       */
+/*   Updated: 2024/02/12 11:01:57 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,18 @@ void	ft_put_ptr(uintptr_t num)
 
 int	ft_print_ptr(unsigned long long ptr)
 {
-    int	len;
-    int	print_length;
+	int	len;
+	int	print_length;
 
 	len = 0;
-    print_length = 0;
-
+	print_length = 0;
 	print_length += write(1, "0x", 2);
 	if (ptr == 0)
 		print_length += write(1, "0", 1);
 	else
 	{
 		ft_put_ptr(ptr);
-        while (ptr != 0)
+		while (ptr != 0)
 		{
 			len++;
 			ptr = ptr / 16;

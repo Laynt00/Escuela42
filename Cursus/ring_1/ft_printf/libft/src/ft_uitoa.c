@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 01:00:59 by laynt             #+#    #+#             */
-/*   Updated: 2024/02/09 03:09:42 by laynt            ###   ########.fr       */
+/*   Updated: 2024/02/12 11:01:03 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_uitoa(unsigned int n)
 	{
 		num[len - 1] = n % 10 + 48;
 		n = n / 10;
-        len--;
+		len--;
 	}
 	return (num);
 }

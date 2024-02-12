@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/12 11:00:04 by alvartor          #+#    #+#             */
+/*   Updated: 2024/02/12 11:00:05 by alvartor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -45,9 +57,8 @@ void		ft_putnbr_fd(int n, int fd);
 
 // Addons
 
-int     ft_printchar(int c);
-int     ft_num_len(unsigned	int num);
-char    *ft_uitoa(unsigned int n);
-
+int			ft_printchar(int c);
+int			ft_num_len(unsigned	int num);
+char		*ft_uitoa(unsigned int n);
 
 #endif

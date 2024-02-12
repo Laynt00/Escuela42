@@ -1,10 +1,11 @@
 #Variables
 
 NAME = libftprintf.a
-LIBFTNAME = libft.a
+LIBFT = libft
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 LIBFTDIR = ./libft
+AR = ar rcs
 
 #Sources
 
@@ -26,22 +27,12 @@ WHITE = \033[0;97m
 
 ###
 
+$(NAME):	$(OBJS)
+			@$(AR) $(NAME) $(OBJS)
+			@ranlib $(NAME)
+			@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
+
 all:		$(NAME)
-
-makelibft:
-	@make -C $(LIBFTDIR)
-	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-	@mv $(LIBFTNAME) $(NAME)
-	
-
-$(NAME): makelibft $(OBJS)
-	@ar -r $(NAME) $(OBJS)
-	@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
-
-clean:
-	@rm -f $(OBJS)
-	@cd $(LIBFTDIR) && make clean
-	@echo "$(BLUE)ft_printf object files cleaned!$(DEF_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME)
@@ -51,6 +42,11 @@ fclean: clean
 
 re:			fclean all
 			@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEF_COLOR)"
+
+clean:
+	@rm -f $(OBJS)
+	@cd $(LIBFTDIR) && make clean
+	@echo "$(BLUE)ft_printf object files cleaned!$(DEF_COLOR)"
 
 norm:
 			@norminette $(SRC) $(INCLUDE) $(LIBFT) | grep -v Norme -B1 || true
