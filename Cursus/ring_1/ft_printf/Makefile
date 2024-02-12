@@ -10,7 +10,9 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 #Sources
 
-SRCS	=	ft_printf utils/ft_utils
+FILES	=	ft_printf\
+			utils/ft_utils\
+			utils/ft_utils2\
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
