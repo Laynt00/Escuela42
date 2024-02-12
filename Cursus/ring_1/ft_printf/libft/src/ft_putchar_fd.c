@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 21:06:50 by alvartor          #+#    #+#             */
-/*   Updated: 2024/02/01 21:06:52 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/23 09:35:13 by alvartor          #+#    #+#             */
+/*   Updated: 2024/02/08 20:21:42 by laynt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int		ft_putchar(char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	return (write(1, &c, 1));
+	write(fd, &c, 1);
 }

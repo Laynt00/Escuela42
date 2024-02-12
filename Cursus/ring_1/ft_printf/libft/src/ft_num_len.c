@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_num_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 09:35:13 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/23 10:22:51 by alvartor         ###   ########.fr       */
+/*   Created: 2024/02/09 01:00:38 by laynt             #+#    #+#             */
+/*   Updated: 2024/02/09 01:00:41 by laynt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int	ft_num_len(unsigned	int num)
 {
-	write(fd, &c, 1);
+	int	len;
+
+	len = 0;
+	while (num != 0)
+	{
+		len++;
+		num = num / 10;
+	}
+	return (len);
 }

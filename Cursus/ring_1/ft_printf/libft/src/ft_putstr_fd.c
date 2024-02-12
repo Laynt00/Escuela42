@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 12:12:45 by alvartor          #+#    #+#             */
-/*   Updated: 2024/01/08 10:34:56 by alvartor         ###   ########.fr       */
+/*   Created: 2024/01/23 09:46:21 by alvartor          #+#    #+#             */
+/*   Updated: 2024/02/08 20:02:12 by laynt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	len = ft_strlen(s);
+	write(fd, s, len);
 }

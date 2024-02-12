@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 21:14:26 by alvartor          #+#    #+#             */
-/*   Updated: 2024/02/01 21:14:44 by alvartor         ###   ########.fr       */
+/*   Created: 2024/02/08 20:00:23 by laynt             #+#    #+#             */
+/*   Updated: 2024/02/08 20:00:43 by laynt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../libft.h"
 
-void		init_info(t_info *info)
+int	ft_printchar(int c)
 {
-	info->minus = 0;
-	info->zero = 0;
-	info->width = 0;
-	info->prec = -1;
-	info->type = 0;
-	info->nbr_base = 10;
-	info->nbr_sign = 1;
+	write(1, &c, 1);
+	return (1);
 }

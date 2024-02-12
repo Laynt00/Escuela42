@@ -3,75 +3,89 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: laynt <laynt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 12:10:36 by alvartor          #+#    #+#             */
-/*   Updated: 2024/02/05 18:11:23 by alvartor         ###   ########.fr       */
+/*   Created: 2024/02/08 18:19:01 by laynt             #+#    #+#             */
+/*   Updated: 2024/02/09 03:21:28 by laynt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "./libft/libft.h"
-#include "printf.h"
 
-int					parse_format( char *format, va_list args)
+int	ft_formats(va_list args, const char format)
 {
-	int				i;
-	int				ret;
-	t_info			*info;
+	int	print_length;
+
+	print_length = 0;
+	 if (format == 'c')
+	 	print_length += ft_printchar(va_arg(args, int));
+	 else if (format == 's')
+	 	print_length += ft_printstr(va_arg(args, char *));
+	 else if (format == 'p')
+	 	print_length += ft_print_ptr(va_arg(args, unsigned long long));
+	 else if (format == 'd' || format == 'i')
+	 	print_length += ft_printnbr(va_arg(args, int));
+	 else if (format == 'u')
+	 	print_length += ft_print_unsigned(va_arg(args, unsigned int));
+	 else if (format == 'x' || format == 'X')
+	 	print_length += ft_print_hex(va_arg(args, unsigned int), format);
+	 else if (format == '%')
+        write(1, "%", 1);
+	 	print_length += 1;
+	return (print_length);
+}
+
+int	ft_printf(const char *str, ...)
+{
+	int		i;
+	va_list	args;               //Inicio la lista de argumentos
+	int		print_length;
 
 	i = 0;
-	ret = 0;
-	if (!(info = malloc(sizeof(t_info) * 1)))
-		return (-1);
-	while (format[i] != '\0') 
+	print_length = 0;
+	va_start(args, str);
+	while (str[i] != '\0')      //Recorro hasta terminar
 	{
-		while (format[i] != '%' && format[i] != '\0') //Mientras el argumento no sea un formato
-			ret += ft_putchar(format[i++]);
-		if (format[i] == '%')		//when its a format '%'
+		if (str[i] == '%')
 		{
-			init_info(info);        //Create the structure
-			while (format[++i] != '\0' && !(ft_strchr(TYPE, format[i])))
-				check_info(args, format, info, i);
-			info->type = format[i++];
-			if ((info->minus == 1 || info->prec > -1) && info->type != '%')
-				info->zero = 0;
-			ret += print_type(args, info);
+			print_length += ft_formats(args, str[i + 1]);
+			i++;
 		}
+		else
+			print_length += ft_printchar(str[i]);
+		i++;
 	}
-	free(info);
-	return (ret);
+	va_end(args);
+	return (print_length);
 }
-
-void				check_info(va_list ap, char *format, t_info *info, int i)
-{
-	if (format[i] == '0' && info->width == 0 && info->prec == -1)
-		info->zero = 1;
-	else if (format[i] == '-')
-		info->minus = 1;
-	else if (format[i] == '.')
-		info->prec = 0;
-	else if (ft_isdigit(format[i]) || format[i] == '*')
-		check_width_and_prec(ap, format, info, i);
-}
-
-int ft_printf(char const *format, ...)
-{
-    int			ret;
-    va_list		args; // To inicialice the num of arg we're gonna take
-	
-	va_start(args, format);
-
-	ret = parse_format((char *)format, args);
-	va_end(args);  //Ends the list of arguments
-	return (ret);
-}
-
 int main()
 {
-    /* ft_printf("Leo\n");
-	ft_printf("%c\n", "S");
-	ft_printf("%s\n", "String");
-	ft_printf("%%\n"); */
-	printf("%d\n", 2);
-	return 0;
+    printf("----TEST CHAR--------------\n");
+    ft_printf("Hola\n%c\n", 'a');
+    printf("Hola\n%c\n", 'a');
+    printf("----TEST STRING--------------\n");
+    ft_printf("Hola\n%s\n", "Miguelet: Que yo no me drogo!");
+    printf("Hola\n%s\n", "Miguelet: Que yo no me drogo!");
+    printf("----TEST POINTER TO HEX--------------\n");
+    ft_printf("Hola\n%p\n", "Miguelet: Que yo no me drogo!");
+    printf("Hola\n%p\n", "Miguelet: Que yo no me drogo!");
+    printf("----TEST DECIMAL--------------\n");
+    ft_printf("%d\n", 232);
+    printf("%d\n", 232);
+    printf("----TEST ENTERO--------------\n");
+    ft_printf("%i\n", 10);
+    printf("%i\n", 10);
+    printf("----TEST UNSIGNED--------------\n");
+    ft_printf("%u\n", -120);
+    printf("%u\n", -120);
+    printf("----TEST HEXADECIMAL--------------\n");
+    ft_printf("%X\n", -120);
+    printf("%X\n", -120);
+    ft_printf("%x\n", -120);
+    printf("%x\n", -120);
+    printf("----TEST --------------\n");
+    ft_printf("%%\n");
+    printf("%%\n");
+    return 0;
 }
