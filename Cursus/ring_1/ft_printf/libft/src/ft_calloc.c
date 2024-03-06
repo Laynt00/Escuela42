@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 09:06:54 by alvartor          #+#    #+#             */
-/*   Updated: 2024/02/12 12:09:48 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/03/06 11:24:45 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
+	void	*p;
 
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (ptr);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	p = malloc(count * size);
+	if (p == NULL)
+		return (NULL);
+	ft_memset(p, 0, count * size);
+	return (p);
 }
 
 /* int main()

@@ -6,7 +6,7 @@
 /*   By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:56:31 by alvartor          #+#    #+#             */
-/*   Updated: 2024/02/12 11:40:01 by alvartor         ###   ########.fr       */
+/*   Updated: 2024/03/06 11:45:06 by alvartor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 int		ft_printf(const char *format, ...);
 
 /* UTILS */
+
 int		ft_printstr(char *str);
 void	ft_put_ptr(uintptr_t num);
 int		ft_print_ptr(unsigned long long ptr);
