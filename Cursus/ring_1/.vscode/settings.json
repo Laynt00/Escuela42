@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "sstream": "c"
-    },
-    "files.autoSave": "afterDelay",
-    "editor.detectIndentation": false
-}
