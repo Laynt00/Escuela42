@@ -1,15 +1,4 @@
 {
-  "files.autoSave": "afterDelay",
-  "files.associations": {
-    "strings.h": "c",
-    "libft.h": "c",
-    "__functional_03": "c",
-    "functional": "c",
-    "string.h": "c",
-    "stdlib.h": "c"
-  },
-  "editor.detectIndentation": false,
-  "editor.indentSize": "tabSize",
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",
   "C_Cpp_Runner.debuggerPath": "lldb",
