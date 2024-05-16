@@ -6,7 +6,7 @@
 #    By: alvartor <alvartor@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/16 11:42:20 by alvartor          #+#    #+#              #
-#    Updated: 2024/05/16 11:43:04 by alvartor         ###   ########.fr        #
+#    Updated: 2024/05/16 11:48:32 by alvartor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,17 +61,6 @@ LIBTEST_PATH = ./libft/libtest.a
 SL_HEADER_FILE = $(INC_DIR)/so_long.h
 UTEST_NAME = utest
 UTEST_HEADER_FILE = $(INC_DIR)/utest.h
-
-
-ifeq ($(UNAME),Darwin)
-  GFLAGS = -framework OpenGL -framework Appkit -l z
-  GPATH = ./mlx-macos/
-  MLX_PATH = $(GPATH)/libmlx.dylib
-else
-  GFLAGS = -lXext -lX11 -lm -lbsd
-  GPATH = ./mlx-linux/
-  MLX_PATH = $(GPATH)/libmlx.a
-endif
 
 
 all : _libft _mlx $(NAME)
