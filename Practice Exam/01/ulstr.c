@@ -2,6 +2,8 @@
 
 int main(int ac, char *av[])
 {
+    /* checking the number of argument 
+     */
     if (ac == 2)
     {
         int i;
@@ -9,10 +11,11 @@ int main(int ac, char *av[])
         i = 0;
         while (av[1][i])
         {
-            if (av[1][i] == 90 || av[1][i] == 122)
-                av[1][i] -= 25;
-            else if ((av[1][i] >= 65 && av[1][i] <= 89) || (av[1][i] >= 95 && av[1][i] <= 121))
-                av[1][i] += 1;
+            if (av[1][i] >= 65 && av[1][i] <= 90)
+                av[1][i] += 32;
+
+            else if (av[1][i] >= 97 && av[1][i] <= 122)
+                av[1][i] -= 32;
             write(1, &av[1][i], 1);
             i++;
         }
