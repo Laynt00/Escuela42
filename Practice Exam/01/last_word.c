@@ -12,9 +12,7 @@ int	main(int ac, char *av[])
 		while (i >= 0 && (av[1][i] == ' ' || av[1][i] == '\t' || av[1][i] == '\0'))
             i--;
 		while(av[1][i] != ' ' && av[1][i] != '\t')
-		{
 			i--;
-		}
 		i++;
 		while(av[1][i]  && av[1][i] != ' ' && av[1][i] != '\t')
 		{

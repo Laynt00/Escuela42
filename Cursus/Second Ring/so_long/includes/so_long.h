@@ -45,3 +45,15 @@
 # define JPX 40
 # define HPX 15
 # define EHPX 25
+
+typedef struct s_game
+{
+	struct s_character	player;
+	struct s_tile		hero;
+	struct s_tile		item;
+	struct s_tile		exit;
+	struct s_tile		wall;
+	struct s_tile		floor;
+	struct s_map		map;
+	struct s_show		show;
+}	t_game;

@@ -20,7 +20,6 @@ char		*ft_itoa(int n)
 	char			*alpha;
 
 	sign = (n < 0 ? 1 : 0);
-	alpha = 0;
 	len = ft_len(n);
 	nbr = (n < 0 ? -n : n);
 	if ((alpha = malloc(sizeof(char) * len + 1)) == 0)
