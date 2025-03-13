@@ -12,10 +12,11 @@ void	move_w(t_game *g)
 	size_t	i;
 
 	i = 0;
-	while (i++ < ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
+        i++;
 	}
 	if (g->str_line[i - g->wid] == 'C')
 		g->col_cnt++;
@@ -36,10 +37,11 @@ void	move_a(t_game *g)
 	size_t i;
 
 	i = 0;
-	while (i++ < ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
+        i++;
 	}
 	if (g->str_line[i - 1] == 'C')
 		g->col_cnt++;
@@ -60,10 +62,11 @@ void	move_s(t_game *g)
 	size_t	i;
 
 	i = 0;
-	while (i++ < ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
+            i++;
 	}
 	if (g->str_line[i + g->wid] == 'C')
 		g->col_cnt++;
@@ -84,10 +87,11 @@ void	move_d(t_game *g)
 	size_t	i;
 
 	i = 0;
-	while (i++ < ft_strlen(g->str_line))
+	while (i < ft_strlen(g->str_line))
 	{
 		if (g->str_line[i] == 'P')
 			break ;
+        i++;
 	}
 	if (g->str_line[i + 1] == 'C')
 		g->col_cnt++;

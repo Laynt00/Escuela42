@@ -13,21 +13,22 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#  include "../mlx/mlx.h"
-# include "./Get_next_line/get_next_line.h"
+# include "../mlx/mlx.h"
+# include "./get_next_line.h"
 # include "../libft/includes/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
+# include <X11/X.h>
 
-# define X_EVENT_KEY_PRESS			2
-# define X_EVENT_KEY_RELEASE		3
+# define X_EVENT_KEY_PRESS		2
+# define X_EVENT_KEY_RELEASE    3
 
 # define X_EVENT_KEY_EXIT		17
-# define KEY_ESC		53
-# define KEY_W			13
-# define KEY_A			0
-# define KEY_S			1
-# define KEY_D			2
+# define KEY_ESC		        65307
+# define KEY_W			        119
+# define KEY_A			        97
+# define KEY_S			        115
+# define KEY_D			        100
 
 typedef struct s_img {
 	void	*player;
