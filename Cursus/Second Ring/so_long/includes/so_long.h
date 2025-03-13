@@ -13,47 +13,82 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <stdlib.h>
-
-# include "../libft/includes/libft.h"
-
 #  include "../mlx/mlx.h"
-#  define OS "macos"
-#  define LETTER_KEY_LEFT       0
-#  define LETTER_KEY_RIGHT      2
-#  define LETTER_KEY_UP 		13
-#  define LETTER_KEY_DOWN		1
-#  define LETTER_KEY_ACTION		14
-#  define ARROW_KEY_LEFT		123
-#  define ARROW_KEY_RIGHT		124
-#  define ARROW_KEY_UP			126
-#  define ARROW_KEY_DOWN		125
-#  define SPACE_BAR				49
-#  define KEY_ESC				53
-# endif
+# include "./Get_next_line/get_next_line.h"
+# include "../libft/includes/libft.h"
+# include <fcntl.h>
+# include <stdio.h>
 
-# define WINDOW_TITLE "so_long"
-# define WINDOW_WIDTH 1366
-# define WINDOW_HEIGHT 768
-# define NB_LIFE 7
-# define HUD_LM 920
+# define X_EVENT_KEY_PRESS			2
+# define X_EVENT_KEY_RELEASE		3
 
-# define BPX 100
-# define MPX 8
-# define GPX 14
-# define DPX 20
-# define JPX 40
-# define HPX 15
-# define EHPX 25
+# define X_EVENT_KEY_EXIT		17
+# define KEY_ESC		53
+# define KEY_W			13
+# define KEY_A			0
+# define KEY_S			1
+# define KEY_D			2
+
+typedef struct s_img {
+	void	*player;
+	void	*chest;
+	void	*floor;
+	void	*door_c;
+	void	*door_o;
+	void	*wall;
+}				t_img;
 
 typedef struct s_game
 {
-	struct s_character	player;
-	struct s_tile		hero;
-	struct s_tile		item;
-	struct s_tile		exit;
-	struct s_tile		wall;
-	struct s_tile		floor;
-	struct s_map		map;
-	struct s_show		show;
-}	t_game;
+	void	*mlx;
+	void	*win;
+	t_img	img;
+	int		wid;
+	int		hei;
+	char	*str_line;
+	int		all_col;
+	int		col_cnt;
+	int		walk_cnt;
+}				t_game;
+
+/*
+	utils.c
+*/
+char	*ft_strdup_without_newline(char *s);
+int		ft_strlcpy_without_newline(char *dst, char *src, int len);
+char	*ft_strjoin_without_newline(char *s1, char *s2);
+
+/*
+	image.c
+*/
+t_img	img_init(void *mlx);
+void	put_img(t_game *g, int w, int h);
+void	setting_img(t_game *game);
+
+/*
+	map.c
+*/
+void	map_read(char *filename, t_game *game);
+void	map_check_wall(t_game *game);
+void	map_check_params(t_game *game);
+void	map_check(t_game *game);
+
+/*
+	key.c
+*/
+int		clear_game(t_game *game);
+void	move_w(t_game *g);
+void	move_a(t_game *g);
+void	move_s(t_game *g);
+void	move_d(t_game *g);
+
+/*
+	so_long.c
+*/
+void	print_err(char *message);
+void	game_init(t_game *g, char *map);
+int		exit_game(t_game *game);
+int		press_key(int key_code, t_game *game);
+int		main(int ac, char *av[]);
+
+#endif

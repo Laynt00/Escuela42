@@ -34,7 +34,7 @@ INCLUDE = libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME): $(OBJ)
 	$(LIB) $(NAME) $(OBJ)
 
 %.o: %.c
