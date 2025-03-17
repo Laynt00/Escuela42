@@ -1,50 +1,58 @@
-NAME		= so_long
-LIBFT		= libft
-LIBFT_LIB	= libft.a
+COMPILER = cc
 
-SRCS		= so_long.c \
-			  image.c \
-			  movement.c \
-			  map.c \
-			  utils.c \
-			  get_next_line.c \
-			  get_next_line_utils.c \
+CFLAGS = -Wall -Wextra -Werror -Imlx
 
-
-
-OBJS		= $(SRCS:%.c=%.o)
-
-LIBC		= ar rc
-
-FLAGS		= -Wall -Wextra -Werror
-
-# Códigos de escape ANSI para colores
-GREEN = \033[0;32m
-BLUE = \033[0;34m
 RED = \033[0;31m
+GREEN = \033[0;32m
 RESET = \033[0m
 
-all			:	$(NAME)
+MLX = -L mlx/ -lmlx -lXext -lX11
 
-$(NAME)		:	$(OBJS)
-		make all -C $(LIBFT)/
-		gcc -o $(NAME) $(OBJS) -Llibft -lft -L mlx/ -lmlx -lXext -lX11
-		@echo "$(GREEN)✅ Compilación exitosa: $(TARGET) se ha creado correctamente."
+MANDATORY = mandatory/events.c \
+			mandatory/card_parsing.c \
+			mandatory/display.c \
+			mandatory/motion.c \
+			mandatory/so_long.c \
+			mandatory/check_path.c \
+			mandatory/get_next_line.c \
+			mandatory/get_next_line_utils.c
 
-%.o			:	%.c
-		gcc $(FLAGS) -c $^ -I./ -o $@
+
+OBJM = ${MANDATORY:.c=.o}
+
+NAME = so_long
+BONUS_NAME = so_long_bonus
+
+LIBFT = libft/libft.a
+
+HEADER = mandatory/so_long.h \
+		libft/libft.h \
+		mandatory/get_next_line.h
 
 
-clean		:
-		rm -f $(OBJS)
-		make clean -C $(LIBFT)
-		@echo "$(RED)🧹 Archivos objeto y ejecutable eliminados."
+all: ${NAME}
 
-fclean		:	clean
-		rm -f $(NAME)
-		rm -f $(LIBFT_LIB)
-		make fclean -C $(LIBFT)
+${NAME} : ${OBJM} ${LIBFT}
+	@echo "${RED}🚀 Launching compilation...${RESET}"
+	${COMPILER} ${CFLAGS} ${OBJM} ${LIBFT} ${MLX} -o ${NAME}
+	@echo "${GREEN}✅ ${NAME} successfully compiled!${RESET}"
 
-re			:	fclean all
+mandatory/%.o: mandatory/%.c ${HEADER}
+	${COMPILER} ${CFLAGS} -c $< -o $@
 
-.PHONY		:	all clean fclean re bonus
+${LIBFT}:
+	make -C libft
+
+clean:
+	${RM} ${OBJM} $(OBJB)
+	make clean -C libft
+	@echo "${RED}🗑 Object files removed!${RESET}"
+
+fclean: clean
+	${RM} ${NAME} ${BONUS_NAME}
+	make fclean -C libft
+	@echo "${RED}🔥 Executable removed!${RESET}"
+
+re: fclean all
+
+.PHONY: all clean fclean re
